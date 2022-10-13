@@ -70,7 +70,27 @@
                 myTime = Date.now()
                 console.log(Timer)
             }
-             </script>
+             //Bonus
+             function startTime() {
+                let countdown = Math.floor(Math.random() * 9) + 2
+                console.log()
+                for(let i = 0; i < countdown; i++) {
+                    setTimeout(() => {
+                        document.getElementById("countdown").innerHTML = i
+                    }, ((countdown-1-i)*1000));
+                }
+                setTimeout(() => {
+                    if(myTime == undefined) {
+                        document.getElementById("target").innerHTML = "Too Slow"
+                    } else {
+                        let buttonTime = Date.now()
+                        document.getElementById("target").innerHTML = "Time was " + (buttonTime - myTime)
+                    }
+                }, 3000);
+            }
+       
+           
+    </script>
 
 </body>
 
